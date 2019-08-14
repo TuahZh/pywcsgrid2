@@ -4,7 +4,11 @@ import warnings, sys
 import six
 
 import matplotlib.axes as maxes
-from matplotlib.cbook import is_string_like
+# I don't know why is_string_like is needed here
+try:
+	from matplotlib.cbook import is_string_like
+except:
+	pass
 
 import numpy as np
 from .wcs_transforms import (WcsSky2PixelTransform,
